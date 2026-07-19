@@ -2,13 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aero-os</title>
+    <title>Aero-os // Mission Control</title>
   </head>
   <body>
-    <div id="app"></div>
-    <p>hello</p>
+    <div id="top-bar">
+      <div class="sys-title">AeroOS v1.0.0</div>
+      <div id="sys-clock">00:00:00</div>
+    </div>
+    <div id="desktop">
+      <div class="window" id="win-welcome">
+        <div class="window-header">
+            <span class="window-title">SYS_INITIALIZATION.LOG</span>
+            <button class="window-close-btn">[X]</button>
+        </div>
+        <div class="window-content">
+          <p class="status-tag">[ AUTHENTICATED_SESSION ]</p>
+          <h1>WELCOME TO THE CORE</h1>
+          <p>System initialization complete. AeroOS telemetry networks are online. This workspace provides a direct interface to low-level background pipelines and custom applications.</p>
+          <div class="pipeline-links">
+             <a href="https://github.com" target="_blank">> OPEN_GITHUB_PIPELINE</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
