@@ -50,7 +50,7 @@ body {
   color: var(--text-main);
 }
 
-/* --- DESKTOP --- */
+/* Desktop */
 #desktop {
   flex: 1;
   position: relative;
@@ -100,6 +100,50 @@ body {
 
 .window-content {
   padding: 1.5rem;
+}
+
+/* Desktop Icons */
+#desktop-icons {
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 5; 
+}
+
+.shortcut-icon {
+  width: 90px;
+  padding: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  user-select: none;
+  box-sizing: border-box;
+}
+.shortcut-icon .icon-symbol {
+  font-size: 2rem;
+  color: var(--text-main);
+  margin-bottom: 0.25rem;
+  line-height: 1;
+}
+
+.shortcut-icon .icon-label {
+  font-size: 0.75rem;
+  color: #b0b0b0;
+  margin: 0;
+  word-wrap: break-word;
+}
+.shortcut-icon.selected {
+  background-color: rgba(255, 74, 0, 0.1);
+  border: 1px dashed var(--accent-color);
+}
+
+.shortcut-icon.selected .icon-symbol,
+.shortcut-icon.selected .icon-label {
+  color: var(--accent-color);
 }
 
 /* Content */
@@ -194,4 +238,42 @@ p {
   border-color: var(--accent-color);
   color: var(--text-main);
   background-color: rgba(255, 74, 0, 0.05);
+}
+
+/* App Layout */
+.app-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 350px;
+  padding: 1rem !important;
+}
+#archive-sidebar {
+  width: 180px;
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+#archive-viewer {
+  flex: 1;
+  overflow-y: auto;
+  padding-left: 0.5rem;
+}
+
+#archive-viewer h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+#archive-viewer .log-date {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  margin-bottom: 1rem;
 }

@@ -87,3 +87,15 @@ windows.forEach(win => {
     }
   });
 });
+
+// Archive Icon Selection
+const iconArchive = document.querySelector("#icon-archive");
+
+iconArchive.addEventListener("click", (e) => {
+  e.stopPropagation(); // Évite que le clic soit intercepté par le bureau
+  iconArchive.classList.toggle("selected");
+});
+
+document.addEventListener("click", () => {
+  iconArchive.classList.remove("selected");
+});

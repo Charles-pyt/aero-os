@@ -7,11 +7,20 @@
     <title>Aero-os // Mission Control</title>
   </head>
   <body>
+    <!-- Top Bar -->
     <div id="top-bar">
       <div class="sys-title">AeroOS v1.0.0</div>
       <div id="sys-clock">00:00:00</div>
     </div>
+    <!-- Desktop -->
     <div id="desktop">
+      <!-- Desktop Icons -->
+       <div id="desktop-icons">
+        <div class="shortcut-icon" id="icon-archive">
+          <div class="icon-symbol">▤</div>
+          <p class="icon-label">Log_Archive.exe</p>
+        </div>
+       </div>
       <div class="window" id="win-welcome">
         <div class="window-header">
             <span class="window-title">SYS_INITIALIZATION.LOG</span>
@@ -24,6 +33,18 @@
           <div class="pipeline-links">
              <a href="https://github.com" target="_blank">> OPEN_GITHUB_PIPELINE</a>
           </div>
+        </div>
+      </div>
+      <div class="window" id="win-archive" style="display: none; top: 25%; left: 30%;">
+      <div class="window-header">
+        <span class="window-title">LOG_ARCHIVE.EXE</span>
+        <button class="window-close-btn">[X]</button>
+      </div>
+      <div class="window-content app-layout">
+        <div id="archive-sidebar">
+        </div>
+        <div id="archive-viewer">
+          <p class="status-tag">[ SELECT A LOG ENTRY FROM THE SIDEBAR ]</p>
         </div>
       </div>
     </div>
