@@ -4,7 +4,7 @@
   --border-color: #333333;
   --text-main: #e0e0e0;
   --text-dim: #777777;
-  --accent-color: #ff4a00; /* Orange technique */
+  --accent-color: #ff4a00;
 }
 
 * {
@@ -22,14 +22,13 @@ body {
   display: flex;
   flex-direction: column;
   
-  /* Grille de fond type écran radar/télémétrie */
   background-image: 
     linear-gradient(rgba(255, 74, 0, 0.02) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 74, 0, 0.02) 1px, transparent 1px);
   background-size: 25px 25px;
 }
 
-/* --- TOP BAR --- */
+/* Top Bar*/
 #top-bar {
   height: 30px;
   background-color: #000;
@@ -58,7 +57,7 @@ body {
   padding: 2rem;
 }
 
-/* --- STRUCTURE FENÊTRE --- */
+/* Window Structure */
 .window {
   position: absolute;
   top: 15%;
@@ -103,7 +102,7 @@ body {
   padding: 1.5rem;
 }
 
-/* --- CONTENU --- */
+/* Content */
 .status-tag {
   color: var(--accent-color);
   font-size: 0.75rem;
@@ -138,4 +137,61 @@ p {
 .pipeline-links a:hover {
   border-color: var(--accent-color);
   color: var(--accent-color);
+}
+/* Taskbar */
+#taskbar {
+  height: 45px;
+  background-image: #000;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+/* Start Button */
+#start-btn {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-family: inherit;
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+#start-btn:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 10px rgba(255, 74, 0, 0.4);
+}
+
+/* Running Apps Zone */
+#running-apps {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+}
+.taskbar-app-tab {
+  background-color: #111;
+  border: 1px solid var(--border-color);
+  color: var(--text-dim);
+  padding: 0.4rem 1rem;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.taskbar-app-tab:hover {
+  border-color: var(--text-main);
+  color: var(--text-main);
+}
+
+.taskbar-app-tab.active {
+  border-color: var(--accent-color);
+  color: var(--text-main);
+  background-color: rgba(255, 74, 0, 0.05);
 }
