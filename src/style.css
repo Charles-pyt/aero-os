@@ -1,142 +1,141 @@
 :root {
-      --bg-color: #050505;
-        --panel-bg: rgba(10, 10, 10, 0.9);
-          --border-color: #333333;
-            --text-main: #e0e0e0;
-              --text-dim: #777777;
-                --accent-color: #ff4a00; /* Orange technique */
-                }
+  --bg-color: #050505;
+  --panel-bg: rgba(10, 10, 10, 0.9);
+  --border-color: #333333;
+  --text-main: #e0e0e0;
+  --text-dim: #777777;
+  --accent-color: #ff4a00; /* Orange technique */
+}
 
-                * {
-                  box-sizing: border-box;
-                    margin: 0;
-                      padding: 0;
-                      }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-                      body {
-                        font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-                          background-color: var(--bg-color);
-                            color: var(--text-main);
-                              height: 100vh;
-                                overflow: hidden;
-                                  display: flex;
-                                    flex-direction: column;
-                                      
-                                        /* Grille de fond type écran radar/télémétrie */
-                                          background-image: 
-                                              linear-gradient(rgba(255, 74, 0, 0.02) 1px, transparent 1px),
-                                                  linear-gradient(90deg, rgba(255, 74, 0, 0.02) 1px, transparent 1px);
-                                                    background-size: 25px 25px;
-                                                    }
+body {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  /* Grille de fond type écran radar/télémétrie */
+  background-image: 
+    linear-gradient(rgba(255, 74, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 74, 0, 0.02) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
 
-                                                    /* --- TOP BAR --- */
-                                                    #top-bar {
-                                                      height: 30px;
-                                                        background-color: #000;
-                                                          border-bottom: 1px solid var(--border-color);
-                                                            display: flex;
-                                                              justify-content: space-between;
-                                                                align-items: center;
-                                                                  padding: 0 1rem;
-                                                                    font-size: 0.85rem;
-                                                                      letter-spacing: 1px;
-                                                                      }
+/* --- TOP BAR --- */
+#top-bar {
+  height: 30px;
+  background-color: #000;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
 
-                                                                      .sys-title {
-                                                                        color: var(--accent-color);
-                                                                          font-weight: bold;
-                                                                          }
+.sys-title {
+  color: var(--accent-color);
+  font-weight: bold;
+}
 
-                                                                          #sys-clock {
-                                                                            color: var(--text-main);
-                                                                            }
+#sys-clock {
+  color: var(--text-main);
+}
 
-                                                                            /* --- DESKTOP --- */
-                                                                            #desktop {
-                                                                              flex: 1;
-                                                                                position: relative;
-                                                                                  padding: 2rem;
-                                                                                  }
+/* --- DESKTOP --- */
+#desktop {
+  flex: 1;
+  position: relative;
+  padding: 2rem;
+}
 
-                                                                                  /* --- STRUCTURE FENÊTRE --- */
-                                                                                  .window {
-                                                                                    position: absolute;
-                                                                                      top: 15%;
-                                                                                        left: 20%;
-                                                                                          width: 100%;
-                                                                                            max-width: 550px;
-                                                                                              background-color: var(--panel-bg);
-                                                                                                border: 1px solid var(--border-color);
-                                                                                                  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-                                                                                                  }
+/* --- STRUCTURE FENÊTRE --- */
+.window {
+  position: absolute;
+  top: 15%;
+  left: 20%;
+  width: 100%;
+  max-width: 550px;
+  background-color: var(--panel-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
 
-                                                                                                  .window-header {
-                                                                                                    background-color: #111;
-                                                                                                      border-bottom: 1px solid var(--border-color);
-                                                                                                        padding: 0.5rem 1rem;
-                                                                                                          display: flex;
-                                                                                                            justify-content: space-between;
-                                                                                                              align-items: center;
-                                                                                                                user-select: none;
-                                                                                                                }
+.window-header {
+  background-color: #111;
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
 
-                                                                                                                .window-title {
-                                                                                                                  font-size: 0.8rem;
-                                                                                                                    color: var(--text-dim);
-                                                                                                                      letter-spacing: 1px;
-                                                                                                                      }
+.window-title {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 1px;
+}
 
-                                                                                                                      .window-close-btn {
-                                                                                                                        background: transparent;
-                                                                                                                          border: none;
-                                                                                                                            color: var(--text-dim);
-                                                                                                                              font-family: inherit;
-                                                                                                                                cursor: pointer;
-                                                                                                                                  font-size: 0.8rem;
-                                                                                                                                  }
+.window-close-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
 
-                                                                                                                                  .window-close-btn:hover {
-                                                                                                                                    color: var(--accent-color);
-                                                                                                                                    }
+.window-close-btn:hover {
+  color: var(--accent-color);
+}
 
-                                                                                                                                    .window-content {
-                                                                                                                                      padding: 1.5rem;
-                                                                                                                                      }
+.window-content {
+  padding: 1.5rem;
+}
 
-                                                                                                                                      /* --- CONTENU --- */
-                                                                                                                                      .status-tag {
-                                                                                                                                        color: var(--accent-color);
-                                                                                                                                          font-size: 0.75rem;
-                                                                                                                                            margin-bottom: 1rem;
-                                                                                                                                              letter-spacing: 1px;
-                                                                                                                                              }
+/* --- CONTENU --- */
+.status-tag {
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
 
-                                                                                                                                              h1 {
-                                                                                                                                                font-size: 1.4rem;
-                                                                                                                                                  font-weight: normal;
-                                                                                                                                                    letter-spacing: 3px;
-                                                                                                                                                      margin-bottom: 1rem;
-                                                                                                                                                        text-transform: uppercase;
-                                                                                                                                                        }
+h1 {
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
 
-                                                                                                                                                        p {
-                                                                                                                                                          font-size: 0.9rem;
-                                                                                                                                                            line-height: 1.6;
-                                                                                                                                                              color: #b0b0b0;
-                                                                                                                                                                margin-bottom: 1.5rem;
-                                                                                                                                                                }
+p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+}
 
-                                                                                                                                                                .pipeline-links a {
-                                                                                                                                                                  color: var(--text-main);
-                                                                                                                                                                    text-decoration: none;
-                                                                                                                                                                      border: 1px solid var(--border-color);
-                                                                                                                                                                        padding: 0.6rem 1rem;
-                                                                                                                                                                          font-size: 0.85rem;
-                                                                                                                                                                            display: inline-block;
-                                                                                                                                                                            }
+.pipeline-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1rem;
+  font-size: 0.85rem;
+  display: inline-block;
+}
 
-                                                                                                                                                                            .pipeline-links a:hover {
-                                                                                                                                                                              border-color: var(--accent-color);
-                                                                                                                                                                                color: var(--accent-color);
-                                                                                                                                                                                }
-
+.pipeline-links a:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
