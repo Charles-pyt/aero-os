@@ -26,14 +26,16 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci
+        # On utilise install au lieu de ci pour éviter les crashs liés au lockfile
+        run: npm install
 
-      - name: Build
-        run: npm run build
+      - name: Build for GitHub Pages
+        # C'est LA ligne magique : on force le chemin relatif uniquement pour la prod
+        run: npx vite build --base=/aero-os/
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
