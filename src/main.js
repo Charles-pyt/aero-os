@@ -99,3 +99,23 @@ iconArchive.addEventListener("click", (e) => {
 document.addEventListener("click", () => {
   iconArchive.classList.remove("selected");
 });
+
+// Select elements new app
+const winArchive = document.querySelector("#win-archive");
+const tabArchive = document.querySelector("#tab-archive");
+
+// Double Click Opener
+iconArchive.addEventListener("dblclick", () => {
+  winArchive.style.display = "block";
+  tabArchive.style.display = "block";
+  tabArchive.classList.add("active");
+  highestZIndex++;
+  winArchive.style.zIndex = highestZIndex;
+});
+// Close the app
+const closeBtnArchive = winArchive.querySelector(".window-close-btn");
+closeBtnArchive.addEventListener("click", () => {
+  winArchive.style.display = "none";
+  tabArchive.style.display = "none";
+  tabArchive.classList.remove("active");
+});
