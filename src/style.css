@@ -123,11 +123,14 @@ body {
   user-select: none;
   box-sizing: border-box;
 }
-.shortcut-icon .icon-symbol {
-  font-size: 2rem;
-  color: var(--text-main);
-  margin-bottom: 0.25rem;
-  line-height: 1;
+.shortcut-icon .icon-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-bottom: 4px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .shortcut-icon .icon-label {
@@ -141,7 +144,7 @@ body {
   border: 1px dashed var(--accent-color);
 }
 
-.shortcut-icon.selected .icon-symbol,
+.shortcut-icon.selected .icon-img,
 .shortcut-icon.selected .icon-label {
   color: var(--accent-color);
 }

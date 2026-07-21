@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aero-os // Mission Control</title>
   </head>
@@ -17,10 +17,15 @@
       <!-- Desktop Icons -->
        <div id="desktop-icons">
         <div class="shortcut-icon" id="icon-archive">
-          <div class="icon-symbol">▤</div>
+          <img src="/public/archive-icon.png" class="icon-img" alt="Log Archive" />
           <p class="icon-label">Log_Archive.exe</p>
         </div>
+        <div class="shortcut-icon" id="icon-iss">
+          <img src="/public/iss-icon.png" class="icon-img" alt="ISS Radar" />
+          <p class="icon-label">ISS_RADAR.exe</p>
+        </div>
        </div>
+       <!-- Welcome window -->
       <div class="window" id="win-welcome">
         <div class="window-header">
             <span class="window-title">SYS_INITIALIZATION.LOG</span>
@@ -31,29 +36,41 @@
           <h1>WELCOME TO THE CORE</h1>
           <p>System initialization complete. AeroOS telemetry networks are online. This workspace provides a direct interface to low-level background pipelines and custom applications.</p>
           <div class="pipeline-links">
-             <a href="https://github.com" target="_blank">> OPEN_GITHUB_PIPELINE</a>
+             <a href="https://github.com/Charles-pyt/aero-os" target="_blank">> OPEN_GITHUB_PIPELINE</a>
           </div>
         </div>
       </div>
+      <!-- Log Archive -->
       <div class="window" id="win-archive" style="display: none; top: 25%; left: 30%;">
-      <div class="window-header">
-        <span class="window-title">LOG_ARCHIVE.EXE</span>
-        <button class="window-close-btn">[X]</button>
-      </div>
-      <div class="window-content app-layout">
-        <div id="archive-sidebar">
+        <div class="window-header">
+          <span class="window-title">LOG_ARCHIVE.EXE</span>
+          <button class="window-close-btn">[X]</button>
         </div>
-        <div id="archive-viewer">
-          <p class="status-tag">[ SELECT A LOG ENTRY FROM THE SIDEBAR ]</p>
+        <div class="window-content app-layout">
+          <div id="archive-sidebar">
+          </div>
+          <div id="archive-viewer">
+            <p class="status-tag">[ SELECT A LOG ENTRY FROM THE SIDEBAR ]</p>
+          </div>
         </div>
       </div>
-    </div>
+      <!-- ISS Tracker -->
+      <div class="window" id="win-iss" style="display: none; top: 15%; left: 50%; width: 380px;">
+        <div class="window-header">
+          <span class="window-title">ISS_RADAR.EXE</span>
+          <button class="window-close-btn">[X]</button>
+        </div>
+        <div class="window-content" id="iss-dashboard">
+          <p class="status-tag">[ ESTABLISHING ORBITAL UPLINK... ]</p>
+        </div>
+      </div>
     </div>
     <div id="taskbar">
       <button id="start-btn">[ LAUNCH ]</button>
       <div id="running-apps">
         <div class="taskbar-app-tab active" id"tab-welcome">SYS_INIT</div>
         <div class"taskbar-app-tab" id="tab-archive" style="display: none;">LOG_ARCHIVE</div>
+        <div class="taskbar-app-tab" id="tab-iss" style="display: none;">ISS_RADAR</div>
       </div>
     </div>
     <script type="module" src="/src/main.js"></script>
