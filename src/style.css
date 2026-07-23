@@ -131,6 +131,7 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  filter: brightness(0) invert(1);
 }
 
 .shortcut-icon .icon-label {
@@ -184,6 +185,43 @@ p {
 .pipeline-links a:hover {
   border-color: var(--accent-color);
   color: var(--accent-color);
+}
+/* Start Menu */
+#start-menu {
+  position: absolute;
+  bottom: 45px;
+  left: 5px;
+  width: 220px;
+  background-color: #080808;
+  border: 1px solid var(--accent-color, #ff4a00);
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.9);
+  z-index: 1001;
+  display: none;
+  font-family: inherit;
+}
+.start-menu-header {
+  background-color: var(--accent-color, #ff4a00);
+  color: #000;
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.start-menu-item {
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #111;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.start-menu-item:hover {
+  color: var(--accent-color, #ff4a00);
+  background-color: #1a1a1a;
 }
 /* Taskbar */
 #taskbar {

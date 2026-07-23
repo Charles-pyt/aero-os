@@ -1,5 +1,8 @@
 import './style.css';
 import './iss_radar.js';
+import { initStartMenu } from './start_menu.js';
+
+initStartMenu();
 
 const clockElement = document.querySelector("#sys-clock")
 
