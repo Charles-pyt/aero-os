@@ -1,8 +1,18 @@
-import './style.css';
+import './styles/style.css';
+import './styles/boot.css';
 import './iss_radar.js';
+import './terminal.js';
+import './notepad.js';
+import './settings.js'
 import { initStartMenu } from './start_menu.js';
 
 initStartMenu();
+
+// Save the theme color
+const savedTheme = localStorage.getItem("aero_os_theme");
+if (savedTheme) {
+  document.documentElement.style.setProperty('--acent-color', savedTheme);
+}
 
 const clockElement = document.querySelector("#sys-clock")
 
@@ -141,6 +151,9 @@ document.addEventListener("click", () => {
 
 initApp("#icon-archive", "#win-archive", "#tab-archive");
 initApp("#icon-iss", "#win-iss", "#tab-iss");
+initApp("#icon-term", "#win-term", "#tab-term");
+initApp("#icon-notepad", "#win-notepad", "#tab-notepad");
+initApp("#icon-settings", "#win-settings", "#tab-settings");
 
 const archiveData = [
   {

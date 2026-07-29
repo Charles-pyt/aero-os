@@ -1,4 +1,4 @@
-import './iss_radar.css'
+import './styles/iss_radar.css';
 
 const issDashboard = document.querySelector("#iss-dashboard");
 

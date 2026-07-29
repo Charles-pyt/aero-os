@@ -28,7 +28,7 @@ body {
   background-size: 25px 25px;
 }
 
-/* Top Bar*/
+/* Top Bar */
 #top-bar {
   height: 30px;
   background-color: #000;
@@ -123,6 +123,7 @@ body {
   user-select: none;
   box-sizing: border-box;
 }
+
 .shortcut-icon .icon-img {
   width: 36px;
   height: 36px;
@@ -140,14 +141,22 @@ body {
   margin: 0;
   word-wrap: break-word;
 }
+
 .shortcut-icon.selected {
-  background-color: rgba(255, 74, 0, 0.1);
+  background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
   border: 1px dashed var(--accent-color);
 }
 
 .shortcut-icon.selected .icon-img,
 .shortcut-icon.selected .icon-label {
   color: var(--accent-color);
+}
+
+.start-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
 }
 
 /* Content */
@@ -186,6 +195,7 @@ p {
   border-color: var(--accent-color);
   color: var(--accent-color);
 }
+
 /* Start Menu */
 #start-menu {
   position: absolute;
@@ -193,20 +203,22 @@ p {
   left: 5px;
   width: 220px;
   background-color: #080808;
-  border: 1px solid var(--accent-color, #ff4a00);
+  border: 1px solid var(--accent-color);
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.9);
   z-index: 1001;
   display: none;
   font-family: inherit;
 }
+
 .start-menu-header {
-  background-color: var(--accent-color, #ff4a00);
+  background-color: var(--accent-color);
   color: #000;
   padding: 6px 10px;
   font-size: 0.75rem;
   font-weight: bold;
   letter-spacing: 1px;
 }
+
 .start-menu-item {
   padding: 10px 12px;
   display: flex;
@@ -220,13 +232,14 @@ p {
 }
 
 .start-menu-item:hover {
-  color: var(--accent-color, #ff4a00);
+  color: var(--accent-color);
   background-color: #1a1a1a;
 }
+
 /* Taskbar */
 #taskbar {
   height: 45px;
-  background-image: #000;
+  background-color: #000;
   border-top: 1px solid var(--border-color);
   display: flex;
   align-items: center;
@@ -247,10 +260,11 @@ p {
   letter-spacing: 1px;
   transition: all 0.2s ease;
 }
+
 #start-btn:hover {
   background-color: var(--accent-color);
   color: #000;
-  box-shadow: 0 0 10px rgba(255, 74, 0, 0.4);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-color) 50%, transparent);
 }
 
 /* Running Apps Zone */
@@ -259,6 +273,7 @@ p {
   gap: 0.5rem;
   flex: 1;
 }
+
 .taskbar-app-tab {
   background-color: #111;
   border: 1px solid var(--border-color);
@@ -270,16 +285,12 @@ p {
   user-select: none;
 }
 
-.taskbar-app-tab:hover {
-  border-color: var(--text-main);
-  color: var(--text-main);
-}
-
 .taskbar-app-tab.active {
   border-color: var(--accent-color);
-  color: var(--text-main);
-  background-color: rgba(255, 74, 0, 0.05);
+  color: var(--accent-color);
+  background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
 }
+
 
 /* App Layout */
 .app-layout {
@@ -289,6 +300,7 @@ p {
   height: 350px;
   padding: 1rem !important;
 }
+
 #archive-sidebar {
   width: 180px;
   border-right: 1px solid var(--border-color);

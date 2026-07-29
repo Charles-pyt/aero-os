@@ -2,7 +2,6 @@ export const initStartMenu = () => {
   const startBtn = document.querySelector("#start-btn");
   const startMenu = document.querySelector("#start-menu");
 
-  // 1. Ouverture/Fermeture du menu Démarrer
   startBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     if (startMenu.style.display === "block") {
@@ -12,20 +11,18 @@ export const initStartMenu = () => {
     }
   });
 
-  // 2. Fermeture si on clique en dehors
   document.addEventListener("click", () => {
     if (startMenu) {
       startMenu.style.display = "none";
     }
   });
 
-  // Empêcher la fermeture si on clique à l'intérieur du menu
   startMenu.addEventListener("click", (e) => {
     e.stopPropagation();
   });
 
-  // 3. Gestion de l'ouverture des applications depuis le menu
-  let menuZIndex = 50; // Compteur local pour les fenêtres ouvertes via le menu
+  // 3. Open app from start menu
+  let menuZIndex = 50;
 
   const setupAppShortcut = (menuId, winId, tabId) => {
     const menuItem = document.querySelector(menuId);
@@ -41,13 +38,14 @@ export const initStartMenu = () => {
         menuZIndex++;
         win.style.zIndex = menuZIndex;
         
-        // Ferme le menu après le clic sur l'app
         startMenu.style.display = "none";
       });
     }
   };
 
-  // On associe chaque élément du menu à son application
+  // Associate the app with the menu
   setupAppShortcut("#menu-archive", "#win-archive", "#tab-archive");
   setupAppShortcut("#menu-iss", "#win-iss", "#tab-iss");
+  setupAppShortcut("#menu-term", "#win-term", "#tab-term");
+  setupAppShortcut("#menu-notepad", "#win-notepad", "#tab-notepad");
 };
